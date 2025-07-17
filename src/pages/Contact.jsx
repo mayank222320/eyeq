@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -13,8 +12,11 @@ import {
 } from "lucide-react";
 import emailjs from "emailjs-com";
 import LocationMap from "../components/Map/LocationMap";
+import SEOHead from "../components/SEO/SEOHead";
+import { seoConfig } from "../utils/seo";
 
 export default function Contact() {
+  const seo = seoConfig.contact;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -53,18 +55,12 @@ export default function Contact() {
 
   return (
     <>
-      <Helmet>
-        <title>Let's Build Something That Matters | Contact EyeQlytics</title>
-        <meta
-          name="description"
-          content="Get in touch with EyeQlytics Tech Pvt. Ltd. Located at 10/81, Near SJP Petrol Pump, Bidkin, Chhatrapati Sambhaji Nagar 431015. Call +91-9970283329 or email contact@eyeqlytics.com for custom software development."
-        />
-        <meta
-          name="keywords"
-          content="contact EyeQlytics, software development company Maharashtra, GovTech solutions India, Chhatrapati Sambhaji Nagar tech company"
-        />
-        <link rel="canonical" href="https://eyeqlytics.in/contact" />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalUrl={`https://eyeqlytics.com${seo.path}`}
+      />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">

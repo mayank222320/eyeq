@@ -1,5 +1,4 @@
 
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
   MapPin, Clock,Users,Target,Heart,Lightbulb,ArrowRight,Code,Zap,Award,
@@ -8,6 +7,8 @@ import { Link } from "react-router-dom";
 import CaptchaModal from '../components/CaptchaModal';
 import React, { useState } from "react"; // ✅
 import OpenRolesSection from "../components/OpenRolesSection";
+import SEOHead from "../components/SEO/SEOHead";
+import { seoConfig } from "../utils/seo";
 
 
 
@@ -129,6 +130,7 @@ const perks = [
 
 
 export default function Careers() {
+  const seo = seoConfig.careers;
 
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [selectedLink, setSelectedLink] = useState(null);
@@ -149,18 +151,12 @@ export default function Careers() {
   
   return (
     <>
-      <Helmet>
-        <title>Join EyeQlytics — Where Impact Meets Engineering</title>
-        <meta
-          name="description"
-          content="At EyeQlytics, we're not hiring for job titles — we're building a team of problem solvers, system thinkers, and domain experts who care about making technology work in the real world. Open positions for Flutter Developer, Spring Boot Developer, DevOps Engineer, GovTech Project Manager, and internships."
-        />
-        <meta
-          name="keywords"
-          content="EyeQlytics careers, GovTech jobs India, Flutter developer jobs, Spring Boot developer, government technology careers, Maharashtra tech jobs, domain expert roles"
-        />
-        <link rel="canonical" href="https://eyeqlytics.in/careers" />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalUrl={`https://eyeqlytics.com${seo.path}`}
+      />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">

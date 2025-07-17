@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
   Award,
@@ -11,6 +10,9 @@ import {
   Building,
   Shield,
 } from "lucide-react";
+import SEOHead from "../components/SEO/SEOHead";
+import { seoConfig } from "../utils/seo";
+import { organizationSchema } from "../components/SEO/StructuredData";
 
 const values = [
   {
@@ -66,23 +68,17 @@ const teamStats = [
 ];
 
 export default function About() {
+  const seo = seoConfig.about;
+  
   return (
     <>
-      <Helmet>
-        <title>
-          Who We Are – The Team Behind India's Most Scalable Public Sector Tech
-          Tools
-        </title>
-        <meta
-          name="description"
-          content="Founded by engineers and entrepreneurs passionate about public innovation, EyeQlytics began with CopMap to digitize India's police deployment workflows. Learn about our mission to transform public infrastructure through intelligent systems."
-        />
-        <meta
-          name="keywords"
-          content="EyeQlytics team, GovTech company India, police technology, CopMap founders, Maharashtra startup, public sector innovation"
-        />
-        <link rel="canonical" href="https://eyeqlytics.in/about" />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalUrl={`https://eyeqlytics.com${seo.path}`}
+        structuredData={organizationSchema}
+      />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">

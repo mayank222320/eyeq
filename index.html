@@ -3,39 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Favicon and Icons -->
     <link rel="icon" type="image/png"  href="/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="favicon-96x96" href="/favicon-96x96.png">
     <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Viewport and Basic Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EyeQlytics</title>
-    <meta name="description" content="EyeQlytics Tech Pvt. Ltd. - From Code to Capital. Empowering government agencies, businesses, and communities with scalable, impact-driven technology solutions." />
-    <meta name="keywords" content="GovTech, Public Systems, Custom Software, CopMap, Government Technology, B2B Solutions, EyeQlytics" />
+    <meta name="robots" content="index, follow" />
     <meta name="author" content="EyeQlytics Tech Pvt. Ltd." />
+    <meta name="generator" content="Vite" />
+    
+    <!-- Default SEO (will be overridden by React Helmet) -->
+    <title>EyeQlytics - Engineering Operational Excellence in Government & Enterprise</title>
+    <meta name="description" content="Indian GovTech company empowering government agencies with scalable technology solutions. CopMap for police departments now live in Maharashtra." />
+    <meta name="keywords" content="GovTech India, Public Systems, Custom Software Development, CopMap, Government Technology, B2B Solutions, Police Technology, Maharashtra" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="EyeQlytics" />
-    <meta property="og:url" content="https://eyeqlytics.com/" />
-    <meta property="og:title" content="EyeQlytics - Revolutionizing Public Systems with Custom Tech Solutions" />
-    <meta property="og:description" content="From Code to Capital. Empowering government agencies, businesses, and communities with scalable, impact-driven technology solutions." />
+    <meta property="og:url" content="https://eyeqlytics.com" />
+    <meta property="og:title" content="EyeQlytics - Engineering Operational Excellence in Government & Enterprise" />
+    <meta property="og:description" content="Indian GovTech company empowering government agencies with scalable technology solutions. CopMap for police departments now live in Maharashtra." />
     <meta property="og:image" content="https://eyeqlytics.com/og-image.jpg" />
+    <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://eyeqlytics.com/" />
-    <meta property="twitter:title" content="EyeQlytics - Revolutionizing Public Systems with Custom Tech Solutions" />
-    <meta property="twitter:description" content="From Code to Capital. Empowering government agencies, businesses, and communities with scalable, impact-driven technology solutions." />
+    <meta property="twitter:url" content="https://eyeqlytics.com" />
+    <meta property="twitter:title" content="EyeQlytics - GovTech Solutions India" />
+    <meta property="twitter:description" content="Custom technology solutions for government and enterprise. CopMap live in Maharashtra police departments." />
     <meta property="twitter:image" content="https://eyeqlytics.com/og-image.jpg" />
+    <meta property="twitter:site" content="@eyeqlytics" />
+    <meta property="twitter:creator" content="@eyeqlytics" />
 
-    <!-- Organization Schema Markup -->
+    <!-- Default Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "EyeQlytics",
+      "name": "EyeQlytics Tech Pvt. Ltd.",
       "url": "https://eyeqlytics.com",
-      "logo": "https://eyeqlytics.com/favicon.png",
+      "logo": "https://eyeqlytics.com/EyeQlytics_Technologies1.png",
+      "description": "Indian GovTech and B2B product innovation company focused on building tailored digital solutions for underserved sectors",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10/81, Near SJP Petrol Pump, Bidkin",
+        "addressLocality": "Chhatrapati Sambhaji Nagar",
+        "addressRegion": "Maharashtra",
+        "postalCode": "431105",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9970283329",
+        "contactType": "customer service"
+      },
       "sameAs": [
         "https://www.linkedin.com/company/eyeqlytics-technologies-pvt-ltd"
       ]
@@ -49,18 +74,90 @@
 
     <!-- Theme color -->
     <meta name="theme-color" content="#3B82F6" />
+    <meta name="msapplication-TileColor" content="#3B82F6" />
+    
+    <!-- Performance and Security -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 
     <style>
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      
+      /* Loading styles */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #f3f4f6;
+        border-top: 4px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
     </style>
   </head>
   <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-spinner"></div>
+    </div>
+    
     <div id="root"></div>
+    
     <noscript>
-      <p>JavaScript is disabled in your browser. Please enable JavaScript to view this website properly.</p>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser settings and refresh the page.</p>
+      </div>
     </noscript>
+    
     <script type="module" src="/src/main.jsx"></script>
+    
+    <script>
+      // Hide loading screen when page loads
+      window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.style.display = 'none';
+        }
+      });
+      
+      // Service Worker Registration (for PWA capabilities)
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

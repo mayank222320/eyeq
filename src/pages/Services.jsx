@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
   Code,
@@ -18,6 +17,9 @@ import {
   Building,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEOHead from "../components/SEO/SEOHead";
+import { seoConfig } from "../utils/seo";
+import { serviceSchema } from "../components/SEO/StructuredData";
 
 const coreServices = [
   {
@@ -171,23 +173,23 @@ const processSteps = [
 ];
 
 export default function Services() {
+  const seo = seoConfig.services;
+  
+  const servicesStructuredData = [
+    serviceSchema("Custom Software Development", "Complete web and mobile applications with robust architecture, clean code, and scalability in mind."),
+    serviceSchema("GovTech Solutions", "Digital command centers and smart dashboards for law enforcement and government operations."),
+    serviceSchema("Mobile App Development", "High-performance apps for Android and iOS using Flutter and Kotlin, optimized for real-time use cases.")
+  ];
+  
   return (
     <>
-      <Helmet>
-        <title>
-          Custom Software Development, GovTech Solutions & Digital
-          Transformation Services | EyeQlytics
-        </title>
-        <meta
-          name="description"
-          content="End-to-End Digital Transformation Across Government, Enterprise & Complex Domains. Professional software development services for government and enterprise. Full-stack development, mobile apps, cloud solutions, and system integration."
-        />
-        <meta
-          name="keywords"
-          content="custom software development, GovTech solutions, enterprise software, mobile app development, cloud services, system integration, digital transformation, Maharashtra, India"
-        />
-        <link rel="canonical" href="https://eyeqlytics.in/services" />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalUrl={`https://eyeqlytics.com${seo.path}`}
+        structuredData={servicesStructuredData}
+      />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">

@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
   ExternalLink,
@@ -12,26 +11,29 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEOHead from "../../components/SEO/SEOHead";
+import { seoConfig } from "../../utils/seo";
+import { softwareApplicationSchema } from "../../components/SEO/StructuredData";
 
 export default function Products() {
+  const seo = seoConfig.copmap;
+  
+  const copMapSchema = softwareApplicationSchema(
+    "CopMap",
+    "Revolutionary police command and control solution featuring live officer tracking, bandobast coordination, and real-time deployment management.",
+    "https://copmap.in"
+  );
 
   
   return (
     <>
-      <Helmet>
-        <title>
-          Intelligent Software Products for Real-World Problems | EyeQlytics
-        </title>
-        <meta
-          name="description"
-          content="CopMap - Revolutionary police command and control solution featuring live officer tracking, bandobast coordination, and real-time deployment management. Trusted by Maharashtra Police."
-        />
-        <meta
-          name="keywords"
-          content="CopMap, police technology, command control system, officer tracking, bandobast management, Maharashtra police, law enforcement software"
-        />
-        <link rel="canonical" href="https://eyeqlytics.in/products" />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalUrl={`https://eyeqlytics.com${seo.path}`}
+        structuredData={copMapSchema}
+      />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">

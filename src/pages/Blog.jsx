@@ -1,8 +1,9 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Calendar, User, ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEOHead from "../components/SEO/SEOHead";
+import { seoConfig } from "../utils/seo";
 
 const blogPosts = [
   {
@@ -90,6 +91,7 @@ const categories = [
 ];
 
 export default function Blog() {
+  const seo = seoConfig.blog;
   const [selectedCategory, setSelectedCategory] = React.useState("All");
 
   const filteredPosts =
@@ -101,20 +103,12 @@ export default function Blog() {
 
   return (
     <>
-      <Helmet>
-        <title>
-          Insights, Engineering, and Field Stories from the EyeQlytics Team
-        </title>
-        <meta
-          name="description"
-          content="At EyeQlytics, we don't just write code — we think deeply about how systems should work. Our blog is where we share what we're building, learning, and reimagining — across sectors, stacks, and stories."
-        />
-        <meta
-          name="keywords"
-          content="EyeQlytics blog, GovTech insights, engineering stories, CopMap development, public innovation, system design, Flutter development, Spring Boot"
-        />
-        <link rel="canonical" href="https://eyeqlytics.in/blog" />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalUrl={`https://eyeqlytics.com${seo.path}`}
+      />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">

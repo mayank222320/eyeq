@@ -1,22 +1,20 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import SEOHead from "../components/SEO/SEOHead";
+import { seoConfig } from "../utils/seo";
 
 export default function Legal() {
+  const seo = seoConfig.legal;
+  
   return (
     <>
-      <Helmet>
-        <title>Legal - Terms of Use & Privacy Policy | EyeQlytics</title>
-        <meta
-          name="description"
-          content="Terms of Use and Privacy Policy for EyeQlytics Tech Pvt. Ltd. Learn about our data protection practices and user rights."
-        />
-        <meta
-          name="keywords"
-          content="EyeQlytics privacy policy, terms of use, data protection, user rights, cookies policy"
-        />
-        <link rel="canonical" href="https://eyeqlytics.in/legal" />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalUrl={`https://eyeqlytics.com${seo.path}`}
+        noIndex={true}
+      />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">

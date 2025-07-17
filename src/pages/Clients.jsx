@@ -1,8 +1,9 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Shield, Building, Users, Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEOHead from "../components/SEO/SEOHead";
+import { seoConfig } from "../utils/seo";
 
 const clients = [
   {
@@ -68,22 +69,16 @@ const clients = [
 // ];
 
 export default function Clients() {
+  const seo = seoConfig.clients;
+  
   return (
     <>
-      <Helmet>
-        <title>
-          Organizations and Institutions Backed by EyeQlytics Technology
-        </title>
-        <meta
-          name="description"
-          content="EyeQlytics is proud to collaborate with forward-thinking organizations across the public, private, and academic sectors. Maharashtra State Police, Healthcare Practitioners, Educational Institutions, and Early-Stage Startups trust our technology solutions."
-        />
-        <meta
-          name="keywords"
-          content="EyeQlytics clients, Maharashtra State Police, CopMap users, healthcare technology, educational partnerships, startup collaboration"
-        />
-        <link rel="canonical" href="https://eyeqlytics.in/clients" />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalUrl={`https://eyeqlytics.com${seo.path}`}
+      />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">
