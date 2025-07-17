@@ -6,6 +6,7 @@ import Layout from './components/layout/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
+import Products from './pages/Products';
 import CopMapPage from './pages/Products/CopMapPage';
 import Services from './pages/Services';
 import Clients from './pages/Clients';
@@ -31,6 +32,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/products" element={<Products />} />
               <Route path="/products/copmap" element={<CopMapPage />} />
               <Route path="/services" element={<Services />} />
               <Route path="/clients" element={<Clients />} />
