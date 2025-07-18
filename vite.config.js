@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  css: {
+    devSourcemap: true
+  },
   build: {
     rollupOptions: {
       output: {
@@ -22,6 +25,12 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true
       }
+    },
+    cssCodeSplit: true,
+    assetsInlineLimit: 4096
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion', 'lucide-react']
     }
   },
   server: {

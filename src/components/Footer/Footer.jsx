@@ -65,9 +65,10 @@ export default function Footer() {
             </div>
             <div className="flex items-center space-x-3">
               <Mail className="h-5 w-5 text-gray-400" />
-              <a href="mailto:contact@eyeqlytics.com" className="hover:text-white transition-colors">
-                contact@eyeqlytics.com
-              </a>
+              <span className="email-protected hover:text-white transition-colors cursor-pointer" 
+                    onClick={() => window.location.href = 'mailto:contact@eyeqlytics.com'}>
+                moc.scitylqeye@tcatnoc
+              </span>
             </div>
           </div>
         </div>
