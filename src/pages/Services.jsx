@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Users, Clock, Target } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, Clock, Target, Palette, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 import CoreServicesSection from "../components/Services/CoreServicesSection";
 import DomainServicesSection from "../components/Services/DomainServicesSection";
