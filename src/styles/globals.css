@@ -28,6 +28,10 @@
   }
 
   * {
+    box-sizing: border-box;
+  }
+}
+
 @layer components {
   /* Modern Glass Morphism Cards */
   .glass-card {
