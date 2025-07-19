@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Shield } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
 
 export default function FeaturedProductSection() {
   return (
-    <section className="py-20 section-modern">
+    <section className="py-20 bg-white">
       <div className="w-full px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text */}
@@ -14,15 +13,7 @@ export default function FeaturedProductSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative z-10"
           >
-            <div className="inline-flex items-center px-4 py-2 glass-card mb-6 animate-pulse-glow">
-              <Shield className="h-5 w-5 text-green-600 mr-2" />
-              <span className="text-sm font-medium text-green-600">
-                Live in Maharashtra Police
-              </span>
-            </div>
-
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Modern Policing, Redefined by CopMap
             </h2>
@@ -61,9 +52,10 @@ export default function FeaturedProductSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="https://copmap.in"
-                className="btn-gradient-primary"
-                target="_blank"
-                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                style={{
+                  background: "linear-gradient(to right, #0039a6, #04327b)",
+                }}
               >
                 Visit CopMap
                 <ExternalLink className="ml-2 h-5 w-5" />
@@ -71,18 +63,18 @@ export default function FeaturedProductSection() {
             </div>
           </motion.div>
 
-          {/* Right Column - Image */}
+          {/* Right Column - Updated Image */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="w-full h-[480px] flex items-center justify-center relative z-10"
+            className="w-full h-[480px] flex items-center justify-center"
           >
             <img
               src="/Petrol Route1.png"
               alt="CopMap police command center dashboard interface"
-              className="h-full w-full object-contain hover-scale"
+              className="h-full w-full object-contain"
               loading="lazy"
             />
           </motion.div>

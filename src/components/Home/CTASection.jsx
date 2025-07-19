@@ -40,7 +40,7 @@ export default function CTASection() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             <Link
-              to="/products/copmap"
+              to="/products"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold rounded-lg transition-all duration-200 text-center"
             >
               View Our Products
