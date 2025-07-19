@@ -27,7 +27,6 @@
     overflow-x: hidden;
   }
 
-  * {
 @layer components {
   /* Modern Glass Morphism Cards */
   .glass-card {
